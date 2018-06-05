@@ -10,11 +10,11 @@
             <td>{{ $task->id }}</td>
         </tr>
         <tr>
-            <th>タイトル</th>
+            <th>Content</th>
             <td>{{ $task->title }}</td>
         </tr>
         <tr>
-            <th>メッセージ</th>
+            <th>Status</th>
             <td>{{ $task->content }}</td>
         </tr>
     </table>
@@ -22,11 +22,11 @@
 
 
 
-     {!! link_to_route('tasks.edit', 'このメッセージを編集', ['id' => $task->id], ['class' => 'btn btn-default']) !!}
+     {!! link_to_route('tasks.edit', 'EDIT', ['id' => $task->id], ['class' => 'btn btn-default']) !!}
 
 <p>
 
     {!! Form::model($task, ['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
-        {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}</p>
+        {!! Form::submit('DELETE', ['class' => 'btn btn-danger']) !!}</p>
     {!! Form::close() !!}
 @endsection
